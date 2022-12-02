@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <!--Bai 1-->
+    <p> A function is triggered the user releases a key in the input field.
+        the function outputs the actual key/letter that was released inside the text  field </p>
+    Enter your name:<input type="text" id="fname" onkeyup="myFunctionName()">
+    Enter your name:<input type="text" id="fusername"onkeyup="myFunctionName()">
+    <p>My name is :<span id="demo"></span></p>
+    <script>
+        function myFunctionName(){
+            var x=document.getElementById("fname").value;
+            var y=document.getElementById("fusername").value;
+            document.getElementById("demo").innerHTML=x+y;
+        }
+    </script>
+   <!-- bai 2-->
+   <script>
+        function grade(score,name){
+            var string_grade;
+            if (score >=0&& score<=100){
+                if(score>90){
+                    string_grade="Exelence";                   
+                }else if(score>80){
+                    string_grade="Very Good";
+                }else if(score>60){
+                    string_grade="Fair";
+                }else if(score>50){
+                    string_grade="m";
+              
+                }else{
+                    string_grade="fail";
+                }
+
+            }else{
+                string_grade="SOME MUSST BE BETWWEEN"
+            }
+            document.getElementById('Str_grade').innerHTML=name+"'sgrade is<b>"+string_grade+"</b>";
+        }
+    </script>
+    <from name="frm_grade" action="#" method="post">
+        <label>Input Student Name:</label>
+        <input type="text" name="txt_name"value=""/>
+        <br/>
+        <label>Input Score:</label>
+        <input type="text" name="txt_score"value=""/>
+        <input type="button" name="btn_grade"onclick="grade(txt_score.value,txt_name.value)"value="Define Grade"/>
+
+    </from>
+    <!--Bai 3-->
+    <p>Click the button to display a time-based greeting: </p>
+    <input type="number" name="" id="nhap">
+    <button onclick="myFunctionSo()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function myFunctionSo(){
+            var number=document.getElementById("nhap").value;
+            var greeting ;
+            if (number==0 )
+            {
+                document.getElementById("demo").innerHTML=" Ban dc 0 diem ";
+                document.getElementById("demo").style.color="yellow";
+            }
+            else if(number>0)
+            {
+                document.getElementById("demo").innerHTML= " Do la so duonng ";
+                document.getElementById("demo").style.color="blue";
+            }
+            else
+            {
+                document.getElementById("demo").innerHTML= " Day la so am";
+            }
+           // document.getElementById("demo").innerHTML=greeting;
+        }
+    </script>
+<!--bai 4-->
+    <p>A function is trigger when the user is pressing a key field</p>
+    <input type="text" onkeypress="myFunctionA()">
+    <script>
+        function myFunctionA(){
+            alert("You pressed a key inside the input field ");
+        } 
+    </script> 
+</body>
+</html>
